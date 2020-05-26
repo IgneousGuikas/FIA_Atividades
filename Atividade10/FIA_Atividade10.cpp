@@ -141,20 +141,6 @@ void QLearningGridWorld(int lines, int columns, int goal_state, float alpha, flo
   float maxQ, tempQ;
   int state = rand()%n;
   int newState, tempState1, tempState2, bestState;
-
-  // Inicializa a matriz da função estado valor e da política ótima
-  for(int i=0; i<n; i++) {
-    V[i][0] = -1.0;
-    V[i][1] = -1.0;
-    for(int j=0; j<4; j++) {
-      tempState1 = transicao(lines, columns, i, j);
-      if(tempState1 != -1 && Q[i][tempState1] > V[i][0]) {
-        V[i][0] = Q[i][tempState1];
-        V[i][1] = tempState1;
-      }
-    }
-  }
-
   int iterLocal;
   int iterGlobal = 0;
   while(iterGlobal < iter) {
