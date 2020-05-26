@@ -47,8 +47,8 @@ int main(int argc, char **argv) {
   srand(time(0));
 
   // Declara as dimensões da grade desejada
-  int lines = 5;
-  int columns = 5;
+  int lines = 2;
+  int columns = 3;
 
   // Declara a posição (estado) objetivo
   int goal_state = 2;
@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
   float V[lines*columns][2];
 
   // Executa a função com os valores especificados de taxa de aprendizagem e gamma
-  QLearningGridWorld(lines, columns, goal_state, 0.1f, 0.9f, 10000, V);
+  QLearningGridWorld(lines, columns, goal_state, 0.1f, 0.9f, 100, V);
 
   // Exige no prompt os resultados obtidos
   printf("\n");
